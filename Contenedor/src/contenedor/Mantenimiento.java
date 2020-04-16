@@ -255,8 +255,8 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
             pst.setString(5, txtFecha.getText().trim());
             pst.setString(6, txtDirreccion.getText().trim());
             pst.setString(7, txtTelefono.getText().trim());
-            pst.setString(7, txtPuesto.getText().trim());
-            pst.setString(7, txtEstatus.getText().trim());
+            pst.setString(8, txtPuesto.getText().trim());
+            pst.setString(9, txtEstatus.getText().trim());
           
             pst.executeUpdate();
             
@@ -266,7 +266,7 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
               txtFecha.setText("");
             txtDirreccion.setText("");
             txtTelefono.setText("");
-             txtPuesto.setText("");
+             txtSueldo.setText("");
             txtEstatus.setText("");
             
          
