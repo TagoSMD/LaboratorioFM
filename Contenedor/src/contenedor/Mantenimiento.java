@@ -57,6 +57,8 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
         txtDirreccion = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
 
+        setVisible(true);
+
         jLabel5.setText("Buscar:");
 
         jButton3.setText("Buscar");
@@ -243,8 +245,8 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
               try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bs_ins3", "root", "kingcobra123DA");
-            PreparedStatement pst = cn.prepareStatement("insert into maestros values(?,?,?,?,?,?,?,?,?)");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/mantenimientor", "root", "kingcobra123DA");
+            PreparedStatement pst = cn.prepareStatement("insert into empleados values(?,?,?,?,?,?,?,?,?)");
             
             pst.setString(1, "0");
             pst.setString(2, txtCodigo.getText().trim());
