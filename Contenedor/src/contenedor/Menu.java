@@ -54,7 +54,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu3.setText("File");
 
-        jMenuItem5.setText("jMenuItem5");
+        jMenuItem5.setText("Clientes");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
