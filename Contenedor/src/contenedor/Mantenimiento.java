@@ -251,7 +251,7 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
               try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/clientesr", "root", "kingcobra123DA");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
             PreparedStatement pst = cn.prepareStatement("insert into clientes values(?,?,?,?,?,?,?,?,?)");
             
             pst.setString(1, "0");
@@ -315,21 +315,21 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
            try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/clientesr", "root", "kingcobra123DA");
-            PreparedStatement pst = cn.prepareStatement("select * from clientes where ID = ?");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
+            PreparedStatement pst = cn.prepareStatement("select * from clientes where id_clientes = ?");
             pst.setString(1, txt_buscar.getText().trim());
             
             ResultSet rs = pst.executeQuery();
             
             if(rs.next()){
-                txtCodigo.setText(rs.getString("Codigo"));
-                txtNombre.setText(rs.getString("Nombre"));
-                txtDpi.setText(rs.getString("DPI"));
-              txtFecha.setText(rs.getString("FechaNacimiento"));
-                txtDirreccion.setText(rs.getString("Dirreccion"));
-                txtTelefono.setText(rs.getString("Telefono"));
-                txtRenta.setText(rs.getString("FechaRenta"));
-                txtDevolucion.setText(rs.getString("FechaDevolucion"));
+                txtCodigo.setText(rs.getString("codigo_clientes"));
+                txtNombre.setText(rs.getString("nombre_clientes"));
+                txtDpi.setText(rs.getString("dpi_clientes"));
+              txtFecha.setText(rs.getString("fecha_clientes"));
+                txtDirreccion.setText(rs.getString("dirreccion_clientes"));
+                txtTelefono.setText(rs.getString("telefono_clientes"));
+                txtRenta.setText(rs.getString("renta_clientes"));
+                txtDevolucion.setText(rs.getString("devolucion_clientes"));
          
                 
                 
