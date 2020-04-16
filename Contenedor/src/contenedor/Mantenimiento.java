@@ -244,27 +244,31 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
               try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bs_ins3", "root", "kingcobra123DA");
-            PreparedStatement pst = cn.prepareStatement("insert into maestros values(?,?,?,?,?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("insert into maestros values(?,?,?,?,?,?,?,?,?)");
             
             pst.setString(1, "0");
-            pst.setString(2, txt_codigo.getText().trim());
-            pst.setString(3, txt_nombre.getText().trim());
-            pst.setString(4, txt_dirrecion.getText().trim());
-            pst.setString(5, txt_telefono.getText().trim());
-            pst.setString(6, txt_correo.getText().trim());
-            pst.setString(7, txt_estatus.getText().trim());
+            pst.setString(2, txtCodigo.getText().trim());
+            pst.setString(3, txtNombre.getText().trim());
+            pst.setString(4, txtPuesto.getText().trim());
+            pst.setString(5, txtFecha.getText().trim());
+            pst.setString(6, txtDirreccion.getText().trim());
+            pst.setString(7, txtTelefono.getText().trim());
+            pst.setString(7, txtPuesto.getText().trim());
+            pst.setString(7, txtEstatus.getText().trim());
           
             pst.executeUpdate();
             
-            txt_codigo.setText("");
-            txt_nombre.setText("");
-            txt_dirrecion.setText("");
-              txt_telefono.setText("");
-            txt_correo.setText("");
-            txt_estatus.setText("");
+            txtCodigo.setText("");
+            txtNombre.setText("");
+            txtPuesto.setText("");
+              txtFecha.setText("");
+            txtDirreccion.setText("");
+            txtTelefono.setText("");
+             txtPuesto.setText("");
+            txtEstatus.setText("");
+            
          
-         
-            label_status.setText("Registro exitoso.");
+            //label_status.setText("Registro exitoso.");
         }catch (Exception e){
             
         }
