@@ -54,10 +54,11 @@ public class Menu extends javax.swing.JFrame {
         );
         jDesktopPane2Layout.setVerticalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 565, Short.MAX_VALUE)
         );
 
-        jMenu3.setText("File");
+        jMenu3.setIcon(new javax.swing.ImageIcon("C:\\Users\\TagoKG\\Desktop\\FilmStudio\\Contenedor\\Imagenes\\descarga.png")); // NOI18N
+        jMenu3.setText("Catalogo");
 
         jMenuItem5.setText("Clientes");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +86,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon("C:\\Users\\TagoKG\\Desktop\\FilmStudio\\Contenedor\\Imagenes\\Opciones.png")); // NOI18N
         jMenu4.setText("Opciones");
 
         jMenuItem3.setText("Salir");
