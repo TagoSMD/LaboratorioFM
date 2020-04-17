@@ -105,6 +105,11 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
         });
 
         Cambio.setText("Cambio");
+        Cambio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CambioActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -341,6 +346,33 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
             
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void CambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambioActionPerformed
+        // TODO add your handling code here:
+          try {
+            String ID = txt_buscar.getText().trim();
+            
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
+            PreparedStatement pst = cn.prepareStatement("update clientes set codigo_clientes = ?, nombre_clientes = ?, dpi_clientes = ?,fecha_clientes = ? ,dirreccion_clientes = ? ,telefono_clientes = ?,renta_clientes = ? , devolucion_clientes = ?   where id_clientes = " + ID);
+            //NombreMaestro = ?,DirrecionMaestro = ? ,TelefonoMaestro = ? ,CorreoEletronicoMaestro = ? ,EstatusMaestro = ?
+            pst.setString(1, "0");
+            pst.setString(1, txtCodigo.getText().trim());
+            pst.setString(2, txtNombre.getText().trim());
+            pst.setString(3, txtDpi.getText().trim());
+            pst.setString(4, txtFecha.getText().trim());
+            pst.setString(5, txtDirreccion.getText().trim());
+            pst.setString(6, txtTelefono.getText().trim());
+            pst.setString(7, txtRenta.getText().trim());
+            pst.setString(8, txtDevolucion.getText().trim());
+            
+            
+            pst.executeUpdate();
+            
+            //label_status.setText("Modificación exitosa.");
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_CambioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
