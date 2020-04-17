@@ -84,6 +84,11 @@ public class Peliculas extends javax.swing.JInternalFrame {
         });
 
         Cambio.setText("Cambio");
+        Cambio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CambioActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -236,21 +241,19 @@ public class Peliculas extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/clientesr", "root", "kingcobra123DA");
-            PreparedStatement pst = cn.prepareStatement("delete from clientes where ID = ?");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
+            PreparedStatement pst = cn.prepareStatement("delete from peliculas where id_peliculas = ?");
 
             pst.setString(1, txt_buscar.getText().trim());
             pst.executeUpdate();
 
             txtCodigo.setText("");
             txtNombre.setText("");
-            txtDpi.setText("");
+            txtGenero.setText("");
             txtExistensias.setText("");
             txtActor.setText("");
             txtDVD.setText("");
-            txtRenta.setText("");
-            txtDevolucion.setText("");
-
+          
             txt_buscar.setText("");
 
             //label_status.setText("Registro eliminado.");
@@ -264,21 +267,19 @@ public class Peliculas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
-            PreparedStatement pst = cn.prepareStatement("select * from clientes where id_clientes = ?");
+            PreparedStatement pst = cn.prepareStatement("select * from peliculas where id_peliculas = ?");
             pst.setString(1, txt_buscar.getText().trim());
 
             ResultSet rs = pst.executeQuery();
 
             if(rs.next()){
-                txtCodigo.setText(rs.getString("codigo_clientes"));
-                txtNombre.setText(rs.getString("nombre_clientes"));
-                txtDpi.setText(rs.getString("dpi_clientes"));
-                txtExistensias.setText(rs.getString("fecha_clientes"));
-                txtActor.setText(rs.getString("dirreccion_clientes"));
-                txtDVD.setText(rs.getString("telefono_clientes"));
-                txtRenta.setText(rs.getString("renta_clientes"));
-                txtDevolucion.setText(rs.getString("devolucion_clientes"));
-
+                txtCodigo.setText(rs.getString("codigo_peliculas"));
+                txtNombre.setText(rs.getString("nombre_peliculas"));
+                txtGenero.setText(rs.getString("genero_peliculas"));
+                txtExistensias.setText(rs.getString("existensias_peliculas"));
+                txtActor.setText(rs.getString("actor_peliculas"));
+                txtDVD.setText(rs.getString("tipodvd_peliculas"));
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Alumno no registrado.");
             }
@@ -287,6 +288,32 @@ public class Peliculas extends javax.swing.JInternalFrame {
 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void CambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambioActionPerformed
+        // TODO add your handling code here:
+           try {
+            String ID = txt_buscar.getText().trim();
+            
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
+            PreparedStatement pst = cn.prepareStatement("update peliculas set codigo_peliculas = ?, nombre_peliculas = ?, genero_peliculas = ?,existensias_peliculas = ? ,actor_peliculas = ? ,tipodvd_peliculas = ?  where id_peliculas = " + ID);
+            //NombreMaestro = ?,DirrecionMaestro = ? ,TelefonoMaestro = ? ,CorreoEletronicoMaestro = ? ,EstatusMaestro = ?
+            pst.setString(1, "0");
+            pst.setString(1, txtCodigo.getText().trim());
+            pst.setString(2, txtNombre.getText().trim());
+            pst.setString(3, txtGenero.getText().trim());
+            pst.setString(4, txtExistensias.getText().trim());
+            pst.setString(5, txtActor.getText().trim());
+            pst.setString(6, txtDVD.getText().trim());
+         
+            
+            
+            pst.executeUpdate();
+            
+            //label_status.setText("Modificación exitosa.");
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_CambioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
