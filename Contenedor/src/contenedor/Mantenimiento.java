@@ -105,6 +105,11 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
         });
 
         Cambio.setText("Cambio");
+        Cambio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CambioActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -251,7 +256,7 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
               try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/clientesr", "root", "kingcobra123DA");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
             PreparedStatement pst = cn.prepareStatement("insert into clientes values(?,?,?,?,?,?,?,?,?)");
             
             pst.setString(1, "0");
@@ -315,21 +320,21 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
            try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/clientesr", "root", "kingcobra123DA");
-            PreparedStatement pst = cn.prepareStatement("select * from clientes where ID = ?");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
+            PreparedStatement pst = cn.prepareStatement("select * from clientes where id_clientes = ?");
             pst.setString(1, txt_buscar.getText().trim());
             
             ResultSet rs = pst.executeQuery();
             
             if(rs.next()){
-                txtCodigo.setText(rs.getString("Codigo"));
-                txtNombre.setText(rs.getString("Nombre"));
-                txtDpi.setText(rs.getString("DPI"));
-              txtFecha.setText(rs.getString("FechaNacimiento"));
-                txtDirreccion.setText(rs.getString("Dirreccion"));
-                txtTelefono.setText(rs.getString("Telefono"));
-                txtRenta.setText(rs.getString("FechaRenta"));
-                txtDevolucion.setText(rs.getString("FechaDevolucion"));
+                txtCodigo.setText(rs.getString("codigo_clientes"));
+                txtNombre.setText(rs.getString("nombre_clientes"));
+                txtDpi.setText(rs.getString("dpi_clientes"));
+              txtFecha.setText(rs.getString("fecha_clientes"));
+                txtDirreccion.setText(rs.getString("dirreccion_clientes"));
+                txtTelefono.setText(rs.getString("telefono_clientes"));
+                txtRenta.setText(rs.getString("renta_clientes"));
+                txtDevolucion.setText(rs.getString("devolucion_clientes"));
          
                 
                 
@@ -341,6 +346,33 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
             
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void CambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambioActionPerformed
+        // TODO add your handling code here:
+          try {
+            String ID = txt_buscar.getText().trim();
+            
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
+            PreparedStatement pst = cn.prepareStatement("update clientes set codigo_clientes = ?, nombre_clientes = ?, dpi_clientes = ?,fecha_clientes = ? ,dirreccion_clientes = ? ,telefono_clientes = ?,renta_clientes = ? , devolucion_clientes = ?   where id_clientes = " + ID);
+            //NombreMaestro = ?,DirrecionMaestro = ? ,TelefonoMaestro = ? ,CorreoEletronicoMaestro = ? ,EstatusMaestro = ?
+            pst.setString(1, "0");
+            pst.setString(1, txtCodigo.getText().trim());
+            pst.setString(2, txtNombre.getText().trim());
+            pst.setString(3, txtDpi.getText().trim());
+            pst.setString(4, txtFecha.getText().trim());
+            pst.setString(5, txtDirreccion.getText().trim());
+            pst.setString(6, txtTelefono.getText().trim());
+            pst.setString(7, txtRenta.getText().trim());
+            pst.setString(8, txtDevolucion.getText().trim());
+            
+            
+            pst.executeUpdate();
+            
+            //label_status.setText("Modificación exitosa.");
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_CambioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
