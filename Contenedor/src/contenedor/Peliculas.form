@@ -5,7 +5,6 @@
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="maximizable" type="boolean" value="true"/>
     <Property name="resizable" type="boolean" value="true"/>
-    <Property name="icon" type="boolean" value="true"/>
     <Property name="inheritsPopupMenu" type="boolean" value="true"/>
     <Property name="visible" type="boolean" value="true"/>
   </Properties>
@@ -215,6 +214,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cambio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CambioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
