@@ -110,6 +110,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu4);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon("C:\\Users\\TagoKG\\Desktop\\FilmStudio\\Contenedor\\Imagenes\\Iconoproceso.png")); // NOI18N
         jMenu1.setText("PROCESO");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
