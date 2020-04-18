@@ -119,6 +119,8 @@ public class Videojuegos extends javax.swing.JInternalFrame {
 
         txtGenero.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        label_status.setFont(new java.awt.Font("Trebuchet MS", 2, 24)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(

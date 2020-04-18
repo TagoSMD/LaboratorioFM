@@ -33,6 +33,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jDesktopPane2 = new javax.swing.JDesktopPane();
+        jTextField1 = new javax.swing.JTextField();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -49,15 +50,26 @@ public class Menu extends javax.swing.JFrame {
 
         jDesktopPane2.setBackground(new java.awt.Color(204, 255, 204));
 
+        jTextField1.setFont(new java.awt.Font("Trebuchet MS", 2, 24)); // NOI18N
+        jTextField1.setText("SANTIAGO MARTINEZ DIAZ 9959-19-13847");
+
+        jDesktopPane2.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
         jDesktopPane2.setLayout(jDesktopPane2Layout);
         jDesktopPane2Layout.setHorizontalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1038, Short.MAX_VALUE)
+            .addGroup(jDesktopPane2Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(516, Short.MAX_VALUE))
         );
         jDesktopPane2Layout.setVerticalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+            .addGroup(jDesktopPane2Layout.createSequentialGroup()
+                .addGap(236, 236, 236)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(254, Short.MAX_VALUE))
         );
 
         jMenu3.setIcon(new javax.swing.ImageIcon("C:\\Users\\TagoKG\\Desktop\\FilmStudio\\Contenedor\\Imagenes\\descarga.png")); // NOI18N
@@ -118,6 +130,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jMenuItem6.setFont(new java.awt.Font("Trebuchet MS", 2, 24)); // NOI18N
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/IconoRecibo.png"))); // NOI18N
         jMenuItem6.setText("Recibo");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,5 +242,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
