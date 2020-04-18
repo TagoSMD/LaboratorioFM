@@ -57,6 +57,10 @@ public class Recibo extends javax.swing.JInternalFrame {
         txtTotal = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
         setVisible(true);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 2, 24)); // NOI18N

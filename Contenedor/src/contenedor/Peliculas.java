@@ -51,6 +51,8 @@ public class Peliculas extends javax.swing.JInternalFrame {
         txtGenero = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
+        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
@@ -213,7 +215,7 @@ public class Peliculas extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 106, Short.MAX_VALUE))
+                .addGap(0, 116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +307,7 @@ public class Peliculas extends javax.swing.JInternalFrame {
                 txtDVD.setText(rs.getString("tipodvd_peliculas"));
                 
             } else {
-                JOptionPane.showMessageDialog(null, "Alumno no registrado.");
+                JOptionPane.showMessageDialog(null, "Pelicula no registrada");
             }
 
         }catch (Exception e){
