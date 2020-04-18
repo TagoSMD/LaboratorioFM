@@ -50,7 +50,10 @@ public class Videojuegos extends javax.swing.JInternalFrame {
         label_status = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
+        setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
         setVisible(true);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 2, 24)); // NOI18N
@@ -115,6 +118,8 @@ public class Videojuegos extends javax.swing.JInternalFrame {
         txt_buscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         txtGenero.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        label_status.setFont(new java.awt.Font("Trebuchet MS", 2, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -249,7 +254,7 @@ public class Videojuegos extends javax.swing.JInternalFrame {
 
             //txtEstatus.setText("");
 
-            //label_status.setText("Registro exitoso.");
+            label_status.setText("Registro exitoso.");
         }catch (Exception e){
 
         }
@@ -272,7 +277,8 @@ public class Videojuegos extends javax.swing.JInternalFrame {
         
             txt_buscar.setText("");
 
-            //label_status.setText("Registro eliminado.");
+            label_status.setText("Registro eliminado.");
+           
 
         } catch (Exception e) {
         }

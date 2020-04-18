@@ -58,6 +58,10 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         txt_buscar = new javax.swing.JTextField();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
         setVisible(true);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -368,7 +372,7 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
                 
                 
             } else {
-                JOptionPane.showMessageDialog(null, "Alumno no registrado.");
+                JOptionPane.showMessageDialog(null, "Cliente no registrado.");
             }
             
         }catch (Exception e){
@@ -383,7 +387,7 @@ public class Mantenimiento extends javax.swing.JInternalFrame {
             
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/xa00", "root", "kingcobra123DA");
             PreparedStatement pst = cn.prepareStatement("update clientes set codigo_clientes = ?, nombre_clientes = ?, dpi_clientes = ?,fecha_clientes = ? ,dirreccion_clientes = ? ,telefono_clientes = ?,renta_clientes = ? , devolucion_clientes = ?   where id_clientes = " + ID);
-            //NombreMaestro = ?,DirrecionMaestro = ? ,TelefonoMaestro = ? ,CorreoEletronicoMaestro = ? ,EstatusMaestro = ?
+            
             pst.setString(1, "0");
             pst.setString(1, txtCodigo.getText().trim());
             pst.setString(2, txtNombre.getText().trim());
